@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   AppBar,
   Button,
@@ -6,12 +6,12 @@ import {
   Hidden,
   Toolbar,
   Typography,
-} from "@material-ui/core";
-import { PowerSettingsNew } from "@material-ui/icons";
-import { useAuth } from "../Auth/hooks/useAuth";
-import { useStyles } from "./HeaderStyles";
-import { useHistory } from "react-router-dom";
-import { Images } from "../../assets/images";
+} from '@material-ui/core';
+import { PowerSettingsNew } from '@material-ui/icons';
+import { useAuth } from '../Auth/hooks/useAuth';
+import { useStyles } from './HeaderStyles';
+import { useHistory } from 'react-router-dom';
+import { Images } from '../../assets/images';
 
 const Header = () => {
   const classes = useStyles();
@@ -21,7 +21,7 @@ const Header = () => {
   const handleLogout = async () => {
     await auth.logout();
 
-    history.push("/login");
+    history.push('/login');
   };
 
   return (
@@ -35,11 +35,11 @@ const Header = () => {
                   src={Images.LogoPokemon}
                   alt="pokemon"
                   className={classes.logo}
-                  onClick={() => history.push("/")}
+                  onClick={() => history.push('/')}
                 />
               </Hidden>
             </Grid>
-            <Grid item>
+            {/* <Grid item>
               <Typography
                 className={classes.link}
                 onClick={() => history.push("/")}
@@ -54,7 +54,7 @@ const Header = () => {
               >
                 Ejercicio 2
               </Typography>
-            </Grid>
+            </Grid> */}
             <Grid item>
               <Button
                 variant="text"
@@ -62,7 +62,7 @@ const Header = () => {
                 aria-haspopup="true"
                 onClick={handleLogout}
               >
-                <PowerSettingsNew fontSize="large" style={{ color: "white" }} />
+                <PowerSettingsNew fontSize="large" style={{ color: 'white' }} />
               </Button>
             </Grid>
           </Grid>
